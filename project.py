@@ -253,6 +253,10 @@ class Project:
                         Path(buildDir).joinpath('dist', 'exqudens-sphinx', '_internal', 'styles'),
                         Path(buildDir).joinpath('dist', 'exqudens-sphinx', 'styles')
                     )
+                    shutil.copytree(
+                        Path(buildDir).joinpath('dist', 'exqudens-sphinx', '_internal', 'templates'),
+                        Path(buildDir).joinpath('dist', 'exqudens-sphinx', 'templates')
+                    )
                 except subprocess.CalledProcessError as e:
                     if e.stdout is not None:
                         self.logger.error(f"stdout: '{e.stdout}'")
